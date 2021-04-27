@@ -1,3 +1,10 @@
+:root {
+    --toggle-color: #6ff7fa;
+    --toggle-color-btn: #a5cace;
+    --toggled-color: #96e7ef;
+    --toggled-color-btn: #1d6269;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -11,4 +18,47 @@ html {
 body {
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Create default state slider base and btn */
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 10rem;
+    height: 5rem;
+    background-color: var(--toggle-color);
+    border-radius: 2.5rem;
+    position: relative;
+    transition: all 0.4s ease-out;
+}
+
+label:after {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--toggle-color-btn);
+    border-radius: 50%;
+    transition: all 0.4s ease-out;
+}
+
+/* Create the styles for checked state */
+input:checked + label {
+    background: var(--toggled-color);
+}
+
+input:checked + label:after {
+    transform: translate3d(5rem, 0, 0);
+    background-color: var(--toggled-color-btn);
 }
