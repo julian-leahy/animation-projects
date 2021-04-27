@@ -6,3 +6,4 @@
   - notification
   - page-loader
   - toggle-slider
+  - burger-menu-to-cross
