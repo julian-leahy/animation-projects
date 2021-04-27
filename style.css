@@ -1,3 +1,7 @@
+:root {
+    --notify-success: #80ff00;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -11,4 +15,46 @@ html {
 body {
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 1.6rem;
+}
+
+.notification {
+    position: absolute;
+    top: 2rem;
+    right: 0px;
+    transform: translate3d(100%, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.07);
+    border-radius: 3px;
+    padding: 2rem 4rem 2rem 2rem;
+    animation: notify 5s ease 1s 1;
+}
+
+.notification:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--notify-success);
+    border-radius: 2px 0 2px 0;
+}
+
+.notification p {
+    padding: 5px;
+}
+
+.notification p:last-child {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+@keyframes notify {
+    0%,
+    100% {
+        transform: translate3d(100%, 0, 0);
+    }
+    10%,
+    90% {
+        transform: translate3d(-2rem, 0, 0);
+    }
 }
