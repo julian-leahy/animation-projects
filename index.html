@@ -11,6 +11,19 @@
 
 <body>
 
+    <div class="burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
 </body>
+
+<script>
+    document.querySelector('.burger-menu').addEventListener('click', function () {
+        this.classList.toggle('active')
+    })
+</script>
 
 </html>
